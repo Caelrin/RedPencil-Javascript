@@ -4,7 +4,7 @@ function Item(price) {
 	this.isInPromo = false;
 	this.lastChangedDate = thirtyDaysAgo();
 	this.lastPromoEnded = thirtyDaysAgo();
-	this.promoStartDate = thirtyDaysAgo();
+	this.promoStartDate = thirtyDaysAgo();    
 }
 
 Item.prototype.isRedPencilPromo = function() {
@@ -33,8 +33,9 @@ Item.prototype.startPromo = function () {
 };
 
 Item.prototype.endPromo = function() {
-	if (this.isInPromo)
+	if (this.isInPromo) {
 		this.lastPromoEnded = new Date();
+	}
 	this.isInPromo = false;
 	this.priceBeforePromo = this.currentPrice;
 };
